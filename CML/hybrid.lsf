@@ -1,7 +1,10 @@
 switchtolayout;
-z_span = 0.3e-6; ## theight
+thickness = 0.3e-6; ## theight
 z_span_cladding = 2e-6;
 z_span_substrate = 1.2e-6;
+yspanfde = 6e-6;
+zminfde = -thickness/2 - z_span_substrate - etch;
+zmaxfde = thickness/2 + z_span_cladding + 1e-6;
 etch = 5e-6;
 setnamed('Input Extensions::rect bend up','z span',z_span);
 setnamed('cladding','z min',z_span/2);
@@ -10,3 +13,7 @@ setnamed('substrate','z max',-z_span/2);
 setnamed('substrate','z min',-z_span/2 - z_span_substrate);
 setnamed('rectangle','z max',-z_span/2 - z_span_substrate);
 setnamed('rectangle','z min',-z_span/2 - z_span_substrate - etch);
+setnamed('FDE','y',6.50333e-6);
+setnamed('FDE','y span', yspanfde);
+setnamed('FDE','z max',zmaxfde);
+setnamed('FDE','z min',zminfde);
